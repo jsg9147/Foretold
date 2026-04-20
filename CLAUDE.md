@@ -30,17 +30,35 @@ Assets/
 - [x] 폴더 구조 확정
 - [x] Unity에서 폴더 구조 직접 생성
 - [ ] Git 초기화 (`git init` in project root)
-- [ ] GridManager.cs 작성
-- [ ] TurnManager.cs 작성
-- [ ] CardData ScriptableObject 작성
+- [x] GridManager.cs 작성 (Unit.cs, TeamType.cs 스텁 포함)
+- [x] TurnManager.cs 작성
+- [x] CardData ScriptableObject 작성 (CardEffect.cs, CardType.cs, EffectType.cs 포함)
+- [x] HandManager.cs 작성
+- [x] CardExecutor.cs 작성
+- [x] EnemyData ScriptableObject + EnemyAI.cs 작성
+- [x] BattleManager.cs 작성
 
 ## 다음 작업 시작 포인트
-Unity에서 위 폴더 구조 생성 후 → GridManager.cs 작성 시작
+Unity 상단 메뉴 Foretold > Generate Starter Cards 실행 → 카드 에셋 5종 생성 확인
+→ 다음: 씬 세팅 (BattleScene 생성, 매니저 오브젝트 배치, 프리팹 연결)
 
 ## 기술 스택 / 설계 방향
 - 그리드 기반 전투 시스템
 - ScriptableObject로 카드/적 데이터 관리
 - 턴제 전투
+
+## 설치된 서드파티 패키지
+- **DOTween Pro** — 카드/유닛 이동 애니메이션, 트윈 전반
+- **UniTask** — 코루틴 대신 async/await, CancellationToken으로 취소 처리
+- **Odin Inspector** — 인스펙터 커스터마이징 (`[ListDrawerSettings]`, `[PreviewField]` 등)
+
+## 코딩 규칙
+- **주석**: 모든 public 메서드·프로퍼티에 `<summary>` XML 주석 필수. 복잡한 로직엔 인라인 주석 추가.
+- **클린 아키텍처 원칙**:
+  - 단일 책임 원칙 (SRP) — 클래스 하나는 하나의 역할만
+  - 의존성 역전 (DIP) — 구체 클래스 직접 참조 대신 이벤트/인터페이스 활용
+  - 매니저 간 직접 호출 최소화 — 이벤트(`Action`, `UnityEvent`)로 통신
+  - 데이터(ScriptableObject)와 로직(MonoBehaviour) 분리 유지
 
 ## 참고
 - Notion 태스크 보드: https://www.notion.so/494db652e09245dd94d8ad65a16b173b

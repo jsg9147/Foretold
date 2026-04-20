@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 104f35301ac533143ab3160a12c74be4, type: 3}
+  m_Name: Card_Slash
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardName: "\uBCA0\uAE30"
+  cardType: 1
+  energyCost: 1
+  description: "\uC804\uBC29 1\uCE78\uC758 \uC801\uC5D0\uAC8C 6 \uD53C\uD574\uB97C
+    \uC900\uB2E4."
+  artwork: {fileID: 0}
+  effects:
+  - effectType: 2
+    value: 6
+    duration: 0
+    targetOffset: {x: 0, y: 1}
+    areaOffsets: []
+    direction: {x: 0, y: 0}
+    comboCondition: 0
+    comboValue: 0
+  upgradedVersion: {fileID: 0}
